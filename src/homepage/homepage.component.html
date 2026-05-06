@@ -1,0 +1,30 @@
+<div class="homepage-back">
+
+  <!--  end of content-->
+  <canvas #backgroundCanvas></canvas>
+  <svg class="star-overlay-svg" aria-hidden="true">
+    <circle *ngFor="let star of stars"
+            [ngClass]="{ 'hidden': star.hidden }"
+            [attr.cx]="star.cx"
+            [attr.cy]="star.cy"
+            [attr.r]="star.r"
+            [attr.fill]="star.color"
+    />
+<!--    <defs>-->
+<!--      <linearGradient id="half-moon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">-->
+<!--        &lt;!&ndash; Left side: 50% opacity red &ndash;&gt;-->
+<!--        <stop offset="50%" stop-color="white" stop-opacity="1" />-->
+<!--        &lt;!&ndash; Right side: fully transparent, starting exactly at 50% to make a sharp line &ndash;&gt;-->
+<!--        <stop offset="50%" stop-color="grey" stop-opacity="0.1" />-->
+<!--      </linearGradient>-->
+<!--    </defs>-->
+
+    <circle *ngFor="let planet of planets"
+            [class.hidden]="planet.hidden"
+            [attr.cx]="planet.cx"
+            [attr.cy]="planet.cy"
+            [attr.r]="planet.r"
+            [attr.fill]="planet.name === 'Moon' ? 'url(#half-moon-gradient)' : planet.color"
+    ></circle>
+  </svg>
+</div>
