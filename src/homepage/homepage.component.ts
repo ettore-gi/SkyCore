@@ -399,4 +399,9 @@ export class HomepageComponent implements AfterViewInit{
       planet.pixelY = (parseFloat(planet.cy)/100) * height;
     }
   }
+
+  protected makeItRed(star: Star) {
+    star.color='red';
+    this.setCanvasSizeAndDraw();
+  }
 }

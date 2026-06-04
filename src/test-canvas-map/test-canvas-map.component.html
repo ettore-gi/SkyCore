@@ -1,0 +1,31 @@
+<div class="map-card">
+  <div class="map-card__header">
+    <div>
+      <h2 class="map-card__title">City Network</h2>
+      <p class="map-card__subtitle">Visual map of connected cities</p>
+    </div>
+  </div>
+
+  <div class="map-card__content">
+    <div class="map-card__canvas-wrapper">
+      <canvas
+        #graphCanvas
+        class="map-card__canvas"
+        [width]="width"
+        [height]="height">
+      </canvas>
+    </div>
+
+    <div class="map-card__actions">
+      <button class="map-card__button" type="button" (click)="addCity('Firenze', 50, 50)">
+        Add Firenze
+      </button>
+      <button class="map-card__button" type="button" (click)="addCity('Napoli', 400, 300)">
+        Add Napoli
+      </button>
+      <button class="map-card__button" type="button" (click)="addCity('Bologna', 800, 140)">
+        Add Bologna
+      </button>
+    </div>
+  </div>
+</div>
